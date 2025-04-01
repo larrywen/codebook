@@ -15,7 +15,7 @@ export async function getUser() {
 
     const response = await fetch(`${process.env.REACT_APP_HOST}/600/users/${browserData.cbid}`, requestOptions);
     if(!response.ok){
-        throw {message: response.setStatusText, status: response.status};
+        throw {message: response.setStatusText, status: response.status}; //eslint-disable-line
     }
     const data = await response.json();
 
@@ -29,9 +29,9 @@ export async function getUserOrders() {
         headers: {"Content-Type": "application/json", Authorization: `Bearer ${browserData.token}`}
     }
     
-    const response = await fetch(`${process.env.REACT_APP_HOST}vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv/660/orders?user.id=${browserData.cbid}`, requestOptions);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders?user.id=${browserData.cbid}`, requestOptions);
     if(!response.ok){
-        throw {message: response.setStatusText, status: response.status};
+        throw {message: response.setStatusText, status: response.status}; //eslint-disable-line
     }
     const data = await response.json();
 
@@ -59,7 +59,7 @@ export async function createOrder(cartList, total, user) {
 
     const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders`, requestOptions);
     if(!response.ok){
-        throw {message: response.setStatusText, status: response.status};
+        throw {message: response.setStatusText, status: response.status}; //eslint-disable-line
     }
     const data = await response.json();
 
