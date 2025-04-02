@@ -5,7 +5,7 @@ export async function login(authDetail) {
         body: JSON.stringify(authDetail)
       }
   
-      const response = await fetch(`${process.env.REACT_APP_HOST}/lgin`, requestOptions);
+      const response = await fetch(`${process.env.REACT_APP_HOST}/login`, requestOptions);
       if(!response.ok){
         throw {message: response.setStatusText, status: response.status}; //eslint-disable-line
     }
